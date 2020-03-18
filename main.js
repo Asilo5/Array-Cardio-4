@@ -22,19 +22,23 @@ const inventors = [
 
 let inventors_15s = inventors.filter((inventor) => inventor.year >= 1500 && inventor.year <= 1599 );
 
-console.table(inventors_15s);
+// console.table(inventors_15s);
 
 // map
 // Give is an array of the inventors first and last names
 
 let inventorsNames = inventors.map((inventor) => {
     return { first: inventor.first, last: inventor.last };
-})
+});
+
+// console.table(inventorsNames)
 
 // sort
 // Sort the inventors by birthdate, oldest to youngest
 
-let inventorBirthdate = inventors.sort((a, b) => a.year - b.year);
+let inventorBirthdate = inventors.sort((a, b) => b.year - a.year);
+
+console.table(inventorBirthdate);
 
 // reduce 
 // how many years did all the investors live
