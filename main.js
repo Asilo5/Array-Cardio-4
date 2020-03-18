@@ -83,7 +83,17 @@ let allNames = people.sort((a,b) => {
   return aLast - bLast;
 });
 
-console.table(allNames);
+// console.table(allNames);
 
 // reduce
 // sum up instances of data array
+
+let numberOfTransport = data.reduce((acc, move) => {
+  if(!acc[move]){
+    acc[move] = 0;
+  }
+  acc[move]++;
+  return acc;
+}, {});
+
+console.log(numberOfTransport)
