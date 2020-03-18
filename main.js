@@ -20,8 +20,9 @@ const inventors = [
 // filter
 // Filter the list of inventors for those who were born in the 1500's
 
-let inventors_15s = inventors.filter((inventor) => inventor.age > 1500 || inventor.age < 1599 ? inventor : '');
+let inventors_15s = inventors.filter((inventor) => inventor.age >= 1500 && inventor.age <= 1599 ? inventor : '');
 
+console.table(inventors_15s);
 
 // map
 // Give is an array of the inventors first and last names
@@ -33,9 +34,13 @@ let inventorsNames = inventors.map((inventor) => {
 // sort
 // Sort the inventors by birthdate, oldest to youngest
 
-
+let inventorBirthdate = inventors.sort((a, b) => a.year - b.year);
 
 // reduce 
 // how many years did all the investors live
+
+let inventorsYears = inventors.reduce((acc, inventor) => {
+
+}, 0);
 
 // sort the investors by years lived
