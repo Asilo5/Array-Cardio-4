@@ -49,6 +49,33 @@ let inventorsYears = inventors.reduce((acc, inventor) => {
    return acc + totalYears;
 }, 0);
 
-console.log(inventorsYears)
+// console.log(inventorsYears)
 
 // sort the investors by years lived
+
+const oldest = inventors.sort((a,b) => {
+ 
+  const lastInventor = a.passed - a.year;
+  const nextInventor = b.passed - b.year;
+
+  return lastInventor > nextInventor;
+});
+
+console.table(oldest);
+
+
+// Create a list of boulevards in Paris that contain 'de' anywhere in the name
+// https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+
+const category = document.querySelector('.mw-category');
+const links = [...document.querySelectorAll('a')];
+
+const de = links
+           .map((link) => link.textContent )
+           .filter((streetName) => streetName.includes('de'));
+
+// sort
+// sort people alphabetically by last name
+
+// reduce
+// sum up instances of data array
