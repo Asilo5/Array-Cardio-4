@@ -61,21 +61,29 @@ const oldest = inventors.sort((a,b) => {
   return lastInventor > nextInventor;
 });
 
-console.table(oldest);
+// console.table(oldest);
 
 
 // Create a list of boulevards in Paris that contain 'de' anywhere in the name
 // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
-const category = document.querySelector('.mw-category');
-const links = [...document.querySelectorAll('a')];
+// const category = document.querySelector('.mw-category');
+// const links = [...document.querySelectorAll('a')];
 
-const de = links
-           .map((link) => link.textContent )
-           .filter((streetName) => streetName.includes('de'));
+// const de = links
+//            .map((link) => link.textContent )
+//            .filter((streetName) => streetName.includes('de'));
 
 // sort
 // sort people alphabetically by last name
+
+let allNames = people.sort((a,b) => {
+  const [aLast, aFirst] = a.split(', ');
+  const [bLast, bFirst] = b.split(', ');
+  return aLast - bLast;
+});
+
+console.table(allNames);
 
 // reduce
 // sum up instances of data array
