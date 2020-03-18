@@ -17,3 +17,21 @@ const inventors = [
 
   const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck', 'pogostick'];
 
+// filter
+// Filter the list of inventors for those who were born in the 1500's
+
+let inventors_15s = inventors.filter((inventor) => inventor.age > 1500 || inventor.age < 1599 ? inventor : '');
+
+
+// map
+// Give is an array of the inventors first and last names
+
+
+
+// sort
+// Sort the inventors by birthdate, oldest to youngest
+
+// reduce 
+// how many years did all the investors live
+
+// sort the investors by years lived
