@@ -26,10 +26,14 @@ let inventors_15s = inventors.filter((inventor) => inventor.age > 1500 || invent
 // map
 // Give is an array of the inventors first and last names
 
-
+let inventorsNames = inventors.map((inventor) => {
+    return { first: inventor.first, last: inventor.last };
+})
 
 // sort
 // Sort the inventors by birthdate, oldest to youngest
+
+
 
 // reduce 
 // how many years did all the investors live
