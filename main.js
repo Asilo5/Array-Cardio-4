@@ -20,7 +20,7 @@ const inventors = [
 // filter
 // Filter the list of inventors for those who were born in the 1500's
 
-let inventors_15s = inventors.filter((inventor) => inventor.age >= 1500 && inventor.age <= 1599 ? inventor : '');
+let inventors_15s = inventors.filter((inventor) => inventor.year >= 1500 && inventor.year <= 1599 );
 
 console.table(inventors_15s);
 
