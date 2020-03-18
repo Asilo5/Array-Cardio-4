@@ -38,13 +38,17 @@ let inventorsNames = inventors.map((inventor) => {
 
 let inventorBirthdate = inventors.sort((a, b) => b.year - a.year);
 
-console.table(inventorBirthdate);
+// console.table(inventorBirthdate);
 
 // reduce 
 // how many years did all the investors live
 
 let inventorsYears = inventors.reduce((acc, inventor) => {
+  let totalYears = inventor.passed - inventor.year;
 
+   return acc + totalYears;
 }, 0);
+
+console.log(inventorsYears)
 
 // sort the investors by years lived
