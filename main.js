@@ -17,3 +17,83 @@ const inventors = [
 
   const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck', 'pogostick'];
 
+// filter
+// Filter the list of inventors for those who were born in the 1500's
+
+let inventors_15s = inventors.filter((inventor) => inventor.year >= 1500 && inventor.year <= 1599 );
+
+// console.table(inventors_15s);
+
+// map
+// Give is an array of the inventors first and last names
+
+let inventorsNames = inventors.map((inventor) => {
+    return { first: inventor.first, last: inventor.last };
+});
+
+// console.table(inventorsNames)
+
+// sort
+// Sort the inventors by birthdate, oldest to youngest
+
+let inventorBirthdate = inventors.sort((a, b) => b.year - a.year);
+
+// console.table(inventorBirthdate);
+
+// reduce 
+// how many years did all the investors live
+
+let inventorsYears = inventors.reduce((acc, inventor) => {
+  let totalYears = inventor.passed - inventor.year;
+
+   return acc + totalYears;
+}, 0);
+
+// console.log(inventorsYears)
+
+// sort the investors by years lived
+
+const oldest = inventors.sort((a,b) => {
+ 
+  const lastInventor = a.passed - a.year;
+  const nextInventor = b.passed - b.year;
+
+  return lastInventor > nextInventor;
+});
+
+// console.table(oldest);
+
+
+// Create a list of boulevards in Paris that contain 'de' anywhere in the name
+// https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+
+// const category = document.querySelector('.mw-category');
+// const links = [...document.querySelectorAll('a')];
+
+// const de = links
+//            .map((link) => link.textContent )
+//            .filter((streetName) => streetName.includes('de'));
+
+// sort
+// sort people alphabetically by last name
+
+let allNames = people.sort((a,b) => {
+  const [aLast, aFirst] = a.split(', ');
+  const [bLast, bFirst] = b.split(', ');
+  return aLast - bLast;
+});
+
+// console.table(allNames);
+
+// reduce
+// sum up instances of data array
+
+let numberOfTransport = data.reduce((acc, move) => {
+  if(!acc[move]){
+    acc[move] = 0;
+  }
+  acc[move]++;
+  return acc;
+}, {});
+
+console.log(numberOfTransport)
